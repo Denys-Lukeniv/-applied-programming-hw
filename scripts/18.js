@@ -15,3 +15,49 @@
 // - [Объекты как ассоциативные массивы](https://learn.javascript.ru/object)
 // - [Перебор свойство объектов](https://learn.javascript.ru/object-for-in)
 
+let student = {
+    name: '',
+    lastname: '',
+    table: []
+}
+
+student.name = prompt('Ваше імʼя?', '');
+student.lastname = prompt('Ваша фамілія?', '');
+
+let askStudent = true
+
+while (askStudent) {
+    let subject = prompt('Введіть предмет та бал', '');
+
+    if (subject == null) {
+        checkProgress()
+        askStudent = false
+        break
+    }
+
+    subject = subject.split(' ');
+    if (subject.length != 2 || String(parseInt(subject[1])) == 'NaN' || parseInt(subject[1]) > 12) {
+        alert("Не вірно введені дані")
+        continue
+    }
+
+    student.table.push(subject)
+}
+
+function checkProgress() {
+    let fail = 0;
+    let res = 0;
+    student.table.forEach((el) => {
+        res += parseInt(el[1]);
+        if (el[1] < 4) {
+            fail++;
+        }
+    })
+
+    if (fail) {
+        alert("Студента не переведено")
+        return
+    }
+    
+    alert(res/student.table.length > 7 ? "Студента переведено со стіпухой" : "Студента переведено")
+}
