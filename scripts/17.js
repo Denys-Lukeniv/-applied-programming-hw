@@ -13,3 +13,13 @@
 // #### Литература:
 // - [Рекурсия, стек](https://learn.javascript.ru/recursion)
 
+const n = prompt('n')
+
+function fibonacci(n) {
+    if (n <= 1) {
+        return n;
+    }
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+console.log(fibonacci(n))
