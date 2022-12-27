@@ -1,0 +1,23 @@
+.hide {
+    visibility: hidden;
+    width: 400px;
+    height: 400px;
+}
+.image-to-show {
+    visibility: visible;
+    width: 400px;
+    height: 400px;
+}
+
+.button{
+    font-size: 20px;
+    width: auto;
+    height: auto;
+    border-radius: 4px;
+    background-color: #ba2323;
+}
+.images-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
